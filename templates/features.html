@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - DermaScan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style-features.css">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">DermaScan</a>
+                <div class="nav-container">
+                    <div class="menu-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="nav-links">
+                        <a href="/index">Home</a>
+                        <a href="/about">About</a>
+                        <a href="features.html" class="active">Features</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+            <section class="page-header">
+                <h1><span class="gradient-text">Features</span></h1>
+                <div class="divider"></div>
+                <p>Discover how DermaScan can help you identify potential skin conditions with our advanced AI technology.</p>
+            </section>
+
+            <section class="how-to-use">
+                <h2>How to Use DermaScan</h2>
+                <div class="usage-grid">
+                    <div class="usage-content">
+                        <h3>Simple Steps for Skin Analysis</h3>
+                        <div class="usage-steps">
+                            <div class="usage-step">
+                                <div class="step-icon step-icon-1">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Take a Clear Photo</h4>
+                                    <p>Ensure good lighting and focus when taking a photo of your skin condition. The clearer the image, the more accurate our analysis will be.</p>
+                                </div>
+                            </div>
+                            <div class="usage-step">
+                                <div class="step-icon step-icon-2">
+                                    <i class="fas fa-upload"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Upload Your Image</h4>
+                                    <p>Click the "Start Analysis" button on our homepage or navigate to the Analysis page. Drag and drop your image or click to browse your files.</p>
+                                </div>
+                            </div>
+                            <div class="usage-step">
+                                <div class="step-icon step-icon-3">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Review Results</h4>
+                                    <p>After our AI analyzes your image, you'll receive information about potential skin conditions that match your image, along with confidence levels.</p>
+                                </div>
+                            </div>
+                            <div class="usage-step">
+                                <div class="step-icon step-icon-4">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Consult a Professional</h4>
+                                    <p>Use our results as a starting point for discussion with healthcare professionals. Always seek medical advice for proper diagnosis and treatment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="usage-image">
+                        <img src="static\images\featuresdsx.png" alt="DermaScan in action">
+                        <div class="image-caption">DermaScan analysis</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="conditions-section">
+                <h2>Detectable Skin Conditions</h2>
+                <div class="conditions-grid">
+                    <div class="card condition-card">
+                        <div class="condition-image">
+                            <img src="static\images\allergic.png" alt="Allergic Reactions">
+                        </div>
+                        <div class="condition-content">
+                            <h3>Allergic Reactions</h3>
+                            <p>Including poison ivy reactions, contact dermatitis, and other allergic skin responses that cause redness, itching, and inflammation.</p>
+                        </div>
+                    </div>
+                    <div class="card condition-card">
+                        <div class="condition-image">
+                            <img src="static\images\rash.jpg" alt="Dry Skin Rash">
+                        </div>
+                        <div class="condition-content">
+                            <h3>Dry Skin Rash</h3>
+                            <p>Atopic dermatitis, eczema, and other conditions causing dry, itchy, or flaky skin with potential cracking and inflammation.</p>
+                        </div>
+                    </div>
+                    <div class="card condition-card">
+                        <div class="condition-image">
+                            <img src="static\images\hives.png" alt="Hives">
+                        </div>
+                        <div class="condition-content">
+                            <h3>Hives</h3>
+                            <p>Urticaria and other allergic skin reactions causing raised, itchy welts on the skin that can appear suddenly and change in size and location.</p>
+                        </div>
+                    </div>
+                    <div class="card condition-card">
+                        <div class="condition-image">
+                            <img src="static\images\moles.jpg" alt="Moles & Skin Cancer">
+                        </div>
+                        <div class="condition-content">
+                            <h3>Moles & Skin Cancer</h3>
+                            <p>Detection of potentially concerning moles and skin lesions that may require medical attention, including changes in size, color, or shape.</p>
+                        </div>
+                    </div>
+                    <div class="card condition-card">
+                        <div class="condition-image">
+                            <img src="static\images\ncg.jpg" alt="Non-cancerous Growths">
+                        </div>
+                        <div class="condition-content">
+                            <h3>Non-cancerous Growths</h3>
+                            <p>Identification of benign skin growths such as skin tags, warts, and seborrheic keratoses that are typically harmless but may cause discomfort.</p>
+                        </div>
+                    </div>
+                    <div class="card condition-card">
+                        <div class="condition-image">
+                            <img src="static\images\pimple.png" alt="Pimples & Acne">
+                        </div>
+                        <div class="condition-content">
+                            <h3>Pimples & Acne</h3>
+                            <p>Analysis of acne conditions, including different types and potential severity levels, from mild comedones to more severe inflammatory acne.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefits-section">
+                <h2>Benefits of Using DermaScan</h2>
+                <div class="card">
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Quick Preliminary Assessment</h3>
+                                <p>Get instant feedback about potential skin conditions without waiting for a doctor's appointment, helping you decide if medical attention is needed.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Accessible Anywhere</h3>
+                                <p>Access our skin analysis tool from anywhere with an internet connection, making it convenient for those in remote areas or with limited healthcare access.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Advanced AI Technology</h3>
+                                <p>Our AI model is trained on thousands of images and continuously improves, providing increasingly accurate assessments over time.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Privacy Focused</h3>
+                                <p>Your images are processed securely and not stored permanently or shared with third parties without your explicit consent.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Track Changes Over Time</h3>
+                                <p>Monitor how skin conditions evolve by comparing analysis results over time, helping you and your healthcare provider make informed decisions.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Better Informed Doctor Visits</h3>
+                                <p>Arrive at your doctor's appointment with preliminary information, making consultations more productive and focused.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <div class="card cta-card">
+                    <h2>Ready to try DermaScan?</h2>
+                    <p>Upload an image of your skin condition and get instant AI-powered analysis to help identify potential skin conditions.</p>
+                    <a href="index.html#analyze" class="btn btn-primary">Start Analysis <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© <span id="current-year"></span> DermaScan. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/js/scripts-features.js"></script>
+</body>
+</html>

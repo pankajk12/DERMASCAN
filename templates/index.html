@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermaScan - AI Skin Disease Detection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style-index.css">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">DermaScan</a>
+                <div class="nav-container">
+                    <div class="menu-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="nav-links">
+                        <a href="/index" class="active">Home</a>
+                        <a href="/about">About</a>
+                        <a href="/features">Features</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Advanced Skin Disease Detection Powered by <span class="gradient-text">AI</span></h1>
+            <p>Upload an image of your skin condition and receive instant AI-powered analysis and potential diagnoses.</p>
+            <a href="#analyze" class="btn btn-primary">Start Analysis <i class="fas fa-upload"></i></a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="features-grid">
+                <div class="card feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Upload Image</h3>
+                    <p>Take a clear photo of your skin condition and upload it to our secure platform.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Analysis</h3>
+                    <p>Our advanced AI model analyzes your image, identifying patterns and potential conditions.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Get Results</h3>
+                    <p>Receive detailed insights about your skin condition with potential diagnoses and next steps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="analyze" class="analyze-section">
+        <div class="container">
+            <h2>Skin Condition Analysis</h2>
+            <div class="card" id="uploadcard">
+                <div id="upload-container" class="upload-container">
+                    <div class="upload-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Upload an image</h3>
+                    <p>Drag and drop an image of your skin condition, or click to browse</p>
+                    <small>Supported formats: JPG, PNG, WEBP (max 10MB)</small>
+                    <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" style="display: none;">
+                </div>
+                <div id="image-preview" class="image-preview">
+                    <img id="preview-img" src="" alt="Uploaded skin image">
+                    <div id="scanning-overlay" class="scanning-overlay" style="display: none;">
+                        <div class="scanning-animation">
+                            <div class="spinner"></div>
+                            <p>Analyzing</p>
+                        </div>
+                    </div>
+                    <div id="error-message" class="error-message" style="display: none;">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div>
+                            <strong>Analysis Failed</strong>
+                            <p id="error-text"></p>
+                        </div>
+                    </div>
+                    <div class="preview-actions">
+                        <button id="change-image-btn" class="btn btn-outline">Upload Different Image</button>
+                        <button id="analyze-btn" class="btn btn-primary">Analyze Image <i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tips-section" class="tips-section">
+                <h3>For best results:</h3>
+                <ul class="tips-list">
+                    <li>Take a clear, well-lit photo of the affected area</li>
+                    <li>Ensure the skin condition is centered in the image</li>
+                    <li>Include some surrounding healthy skin for context</li>
+                    <li>Avoid using filters or editing the image</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="results-section" class="results-section">
+        <div class="container">
+            <div id="results-card" class="card results-card">
+                <div class="results-image">
+                    <img id="result-img" src="" alt="Analyzed skin image" crossOrigin="Anonymous">
+                    <div class="results-image-overlay"></div>
+                </div>
+                <div class="results-content">
+                    <div class="results-header">
+                        <h3>Analysis Results</h3>
+                        <div class="results-divider"></div>
+                    </div>
+                    <div class="result-item">
+                        <h4>Detected Condition</h4>
+                        <p id="result-condition" class="result-condition">-</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Confidence</h4>
+                        <div class="confidence-bar">
+                            <div id="confidence-fill" class="confidence-fill" style="width: 0%;"></div>
+                        </div>
+                        <p id="confidence-text" class="confidence-text">0% confidence</p>
+                    </div>
+                    <div class="disclaimer">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>This analysis is for informational purposes only and should not replace professional medical advice. Please consult with a healthcare provider for proper diagnosis and treatment.</p>
+                    </div>
+                    <div class="preview-actions">
+                        <button id="new-analysis-btn" class="btn btn-outline">Analyze Another Image</button>
+                        <button id="report-btn" class="btn btn-primary">Get Report <i class="fas fa-file-medical"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© <span id="current-year"></span> DermaScan. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="/static/js/scripts-index.js"></script>
+</body>
+</html>
